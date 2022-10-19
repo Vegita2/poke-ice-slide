@@ -1,0 +1,22 @@
+html {
+    background: black;
+}
+
+#canvas {
+    background: white;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+
+.container {
+    display: flex;
+}
+
+.radioButtons {
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    margin: 6px;
+}

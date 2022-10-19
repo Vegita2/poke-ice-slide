@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<link rel="stylesheet" href="styles.css">
+	<meta name="color-scheme" content="dark">
+</head>
+<body>
+
+<div>
+	<label>
+		Width
+		<input id="width"
+		       type="number"
+		       oninput="updateSize()"
+		       value="26"
+		>
+	</label>
+	
+	<label>
+		Height
+		<input id="height"
+		       type="number"
+		       oninput="updateSize()"
+		       value="19"
+		>
+	</label>
+</div>
+
+<div class="container">
+	<div>
+		<canvas
+				onmousedown="toggleDraw(true);mouseClick(event)"
+				onmouseup="toggleDraw(false)"
+				onmousemove="mouseClick(event)"
+				onmouseleave="toggleDraw(false)"
+				id="canvas"
+		></canvas>
+		<div>
+			<span id="x"></span> | <span id="y"></span>
+		</div>
+	</div>
+	<div class="radioButtons">
+		<label>
+			<input onchange="updateType()" type="radio" id="floor" name="t" value="floor">
+			floor
+		</label>
+		<label>
+			<input onchange="updateType()" type="radio" id="ice" name="t" value="ice">
+			ice
+		</label>
+		<label>
+			<input onchange="updateType()" type="radio" id="wall" name="t" checked value="wall">
+			wall
+		</label>
+		<label>
+			<input onchange="updateType()" type="radio" id="start" name="t" value="start">
+			start
+		</label>
+		<label>
+			<input onchange="updateType()" type="radio" id="end" name="t" value="end">
+			end
+		</label>
+		<label>
+			<input onchange="updateType()" type="radio" id="empty" name="t" value="empty">
+			empty
+		</label>
+		<button onclick="importMap()">Import</button>
+		<button onclick="exportMap()">Export</button>
+<!--		<button onclick="calcPath()">CALC</button>-->
+	</div>
+</div>
+
+
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+<script src="dist/index.js"></script>
+</html>
